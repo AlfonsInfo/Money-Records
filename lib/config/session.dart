@@ -17,7 +17,7 @@ class Session{
   }
 
   //* get Session --> untuk pengecekan session
-  static Future<Users> getUser(Users user) async{
+  static Future<Users> getUser() async{
     Users user = Users();    
     final pref = await SharedPreferences.getInstance();
     String? stringUser = pref.getString('user');

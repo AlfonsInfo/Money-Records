@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:money_records/config/app_color.dart';
+import 'package:money_records/data/model/users.dart';
+import 'config/session.dart';
+
+//Page
+import 'presentation/page/home_page.dart';
+import 'presentation/page/auth/login_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -25,7 +31,16 @@ class MainApp extends StatelessWidget {
           foregroundColor: Colors.white
         )
       ),
-      home: const Scaffold(),
+      home: FutureBuilder(
+        future: Session.getUser(),
+        builder: (context, AsyncSnapshot<Users> snapshot) {
+          if(snapshot.data!=null && snapshot.data!.idUser !=null)
+          {
+            return const HomePage();
+          }
+          return const LoginPage();
+        },
+      ),
     );
 }
 
