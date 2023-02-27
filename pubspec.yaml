@@ -9,11 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  get: ^4.6.5
-  shared_preferences: ^2.0.18
-  http: ^0.13.5
-  d_method: ^0.2.0
+  cupertino_icons: ^1.0.2 
+  get: ^4.6.5 #state management
+  shared_preferences: ^2.0.18 #session
+  http: ^0.13.5 #api request
+  d_method: ^0.2.0 #debugging app request
+  intl: ^0.18.0 #format tanggal 
 
 
 dev_dependencies:
